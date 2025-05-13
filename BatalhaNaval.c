@@ -14,12 +14,22 @@ void inicializarTabuleiro(int tab[TAM][TAM]) {
             tab[i][j] = AGUA;
 }
 
-// Exibe o tabuleiro completo
+// Exibe o tabuleiro completo com título e coordenadas
 void exibirTabuleiro(int tab[TAM][TAM]) {
-    printf("Tabuleiro:\n");
+    printf("\n       BATALHA NAVAL\n\n");
+    
+    // Cabeçalho de letras (colunas)
+    printf("   ");
+    for (char letra = 'A'; letra < 'A' + TAM; letra++)
+        printf(" %c", letra);
+    printf("\n");
+
     for (int i = 0; i < TAM; i++) {
+        // Número da linha (1 a 10), com espaçamento para alinhamento
+        printf("%2d ", i + 1);
+        
         for (int j = 0; j < TAM; j++) {
-            printf("%d ", tab[i][j]);
+            printf(" %d", tab[i][j]);
         }
         printf("\n");
     }
